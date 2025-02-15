@@ -7,8 +7,8 @@ public class Policy
       private String smokingStatus; // Are you a smoker or non-smoker? 
       
       private int age;              // Age of the policyholder
-      private int height;           // Height of the policyholder
-      private int weight;           // Weight of the policyholder
+      private double height;           // Height of the policyholder
+      private double weight;           // Weight of the policyholder
       
       public Policy()
          {
@@ -102,7 +102,7 @@ public class Policy
             height = pHeight;
          }     
       
-      public int getHeight()
+      public double getHeight()
          {
             return height;
          }
@@ -112,7 +112,7 @@ public class Policy
             weight = pWeight;
          } 
          
-      public int getWeight()
+      public double getWeight()
          {
             return weight;
          }
