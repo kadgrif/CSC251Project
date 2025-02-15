@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class Policy
    {
       private String policyNumber;  // Insurance Policy Number
