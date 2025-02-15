@@ -4,7 +4,7 @@ public class Policy
       private String providerName;  // Insurance Provider Name
       private String firstName;     // First name of policyholder
       private String lastName;      // Last name of policyholder
-      private boolean smokingStatus; // Are you 
+      private String smokingStatus; // Are you a smoker or non-smoker? 
       
       private int age;              // Age of the policyholder
       private int height;           // Height of the policyholder
@@ -24,7 +24,7 @@ public class Policy
          }
          
       public Policy(String pPolicyNumber, String pProviderName, String pFirstName,
-                    String pLastName, boolean pSmokingStatus, int pAge, int pHeight, int pWeight)
+                    String pLastName, String pSmokingStatus, int pAge, int pHeight, int pWeight)
          {
             policyNumber  = pPolicyName;
             providerName  = pProviderName;
@@ -82,7 +82,7 @@ public class Policy
             smokingStatus = pSmokingStatus;
          }   
       
-      public boolean getSmokingStatus()
+      public String getSmokingStatus()
          {
             return smokingStatus;
          }
