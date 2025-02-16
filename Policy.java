@@ -24,9 +24,9 @@ public class Policy
          }
          
       public Policy(String pPolicyNumber, String pProviderName, String pFirstName,
-                    String pLastName, String pSmokingStatus, int pAge, int pHeight, int pWeight)
+                    String pLastName, String pSmokingStatus, int pAge, double pHeight, double pWeight)
          {
-            policyNumber  = pPolicyName;
+            policyNumber  = pPolicyNumber;
             providerName  = pProviderName;
             firstName    = pFirstName;
             lastName      = pLastName;
@@ -77,7 +77,7 @@ public class Policy
             return lastName;
          }
          
-      public void setSmokingStatus(boolean pSmokingStatus)
+      public void setSmokingStatus(String pSmokingStatus)
          {
             smokingStatus = pSmokingStatus;
          }   
@@ -120,7 +120,7 @@ public class Policy
       public double calculateBMI()
          {
             double BMI = 0;
-            BMI = (weight * 703)/height;
+            BMI = (weight * 703)/Math.pow(height,2);
             
             return BMI;
          }
@@ -135,7 +135,7 @@ public class Policy
             
             if(age > 50)
                {
-                  if(smokerStatus == TRUE)
+                  if(smokingStatus.equalsIgnoreCase("smoker"))
                      {
                         if(calculateBMI() > 35)
                            {
@@ -153,7 +153,7 @@ public class Policy
                
             else
                {
-                  if(smokerStatus == TRUE)
+                  if(smokingStatus.equalsIgnoreCase("smoker"))
                      {
                         if(calculateBMI() > 35)
                            {
@@ -173,5 +173,7 @@ public class Policy
                            }
                      }
                }
+               
+           return total_cost;
          }              
    }
