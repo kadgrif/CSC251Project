@@ -36,22 +36,34 @@ public class Policy
             height        = pHeight;
             weight        = pWeight;
          }
-         
+
+      /**
+         The setPolicyNumber method mutates the value of policyNumber variable.
+      */
       public void setPolicyNumber(String pPolicyNumber)
          {
             policyNumber = pPolicyNumber;
-         }          
+         }     
       
+      /**
+         The getPolicyNumber method returns the value of the policyNumber variable.
+      */
       public String getPolicyNumber()
          {
             return policyNumber;
          } 
-      
+
+      /**
+         The setProviderName method mutates the value of the providerName variable.
+      */
       public void setProviderName(String pProviderName)
          {
             providerName = pProviderName;
          } 
-      
+
+      /**
+         The getProviderName method returns the value of the providerName variable.
+      */
       public String getProviderName()
          {
             return providerName;
