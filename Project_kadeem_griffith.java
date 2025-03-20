@@ -5,7 +5,7 @@ public class Project_kadeem_griffith
       public static void main(String[] args)
          {
             String policy_number, provider_name, first_name, last_name, smoking_status;
-            double height, weight, BMI, policy_price;
+            double height, weight;
             int age; 
             
             Scanner keyboard = new Scanner(System.in);
