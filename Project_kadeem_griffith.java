@@ -28,7 +28,7 @@ public class Project_kadeem_griffith
             age = keyboard.nextInt();
             keyboard.nextLine();
             
-            System.out.print("Please enter the Policyholder's Smkoing Status (smoker/non-smoker): ");
+            System.out.print("Please enter the Policyholder's Smoking Status (smoker/non-smoker): ");
             smoking_status = keyboard.nextLine();
             
             System.out.print("Please enter the Policyholder's Height (in inches): ");

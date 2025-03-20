@@ -208,7 +208,7 @@ public class Policy
                      }
                   else
                      {
-                        if(calculateBMI() > 35)
+                        if(calculateBMI() < 35)
                            {
                               total_cost = base_fee + age_fee + BMI_fee; 
                            }
@@ -226,7 +226,7 @@ public class Policy
                      }
                   else
                      {
-                        if(calculateBMI() > 35)
+                        if(calculateBMI() < 35)
                            {
                               total_cost = base_fee + BMI_fee; 
                            }
