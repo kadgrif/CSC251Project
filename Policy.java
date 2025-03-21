@@ -1,29 +1,31 @@
 public class Policy
    {
-      private String policyNumber;  // Insurance Policy Number
+      
       private String providerName;  // Insurance Provider Name
       private String firstName;     // First name of policyholder
       private String lastName;      // Last name of policyholder
       private String smokingStatus; // Are you a smoker or non-smoker? 
       
+      private int policyNumber;  // Insurance Policy Number
       private int age;              // Age of the policyholder
       private double height;           // Height of the policyholder
       private double weight;           // Weight of the policyholder
       
       public Policy()
          {
-            policyNumber  = "";
+            
             providerName  = "";
-            firstName    = "";
+            firstName     = "";
             lastName      = "";
             smokingStatus = "";
             
+            policyNumber  = 0;
             age           = 0;
             height        = 0;
             weight        = 0;
          }
          
-      public Policy(String pPolicyNumber, String pProviderName, String pFirstName,
+      public Policy(int pPolicyNumber, String pProviderName, String pFirstName,
                     String pLastName, String pSmokingStatus, int pAge, double pHeight, double pWeight)
          {
             policyNumber  = pPolicyNumber;
@@ -40,7 +42,7 @@ public class Policy
       /**
          The setPolicyNumber method mutates the value of policyNumber variable.
       */
-      public void setPolicyNumber(String pPolicyNumber)
+      public void setPolicyNumber(int pPolicyNumber)
          {
             policyNumber = pPolicyNumber;
          }     
@@ -49,7 +51,7 @@ public class Policy
          The getPolicyNumber method returns the value of the policyNumber variable.
          @return The user's policy number.
       */
-      public String getPolicyNumber()
+      public int getPolicyNumber()
          {
             return policyNumber;
          } 
@@ -142,7 +144,7 @@ public class Policy
       /**
          The setHeight method mutates the value of the height variable.
       */
-      public void setHeight(int pHeight)
+      public void setHeight(double pHeight)
          {
             height = pHeight;
          }     
@@ -159,7 +161,7 @@ public class Policy
       /**
          The setWeight method mutates the value of the weight variable.
       */
-      public void setWeight(int pWeight)
+      public void setWeight(double pWeight)
          {
             weight = pWeight;
          } 
@@ -189,6 +191,7 @@ public class Policy
          The calculatePrice method returns the value of the total_cost variable.
          @return The calculation of the total cost based off user input.
       */
+
      public double calculatePrice()
          {
             double base_fee       = 600.00;
@@ -205,13 +208,14 @@ public class Policy
                            {
                               total_cost = base_fee + age_fee + smoker_fee + BMI_fee; 
                            }
+                        else
+                           {
+                              total_cost = base_fee + age_fee + smoker_fee;
+                           }
                      }
                   else
                      {
-                        if(calculateBMI() < 35)
-                           {
-                              total_cost = base_fee + age_fee + BMI_fee; 
-                           }
+                        total_cost = base_fee + age_fee; 
                      }
                }
                
@@ -223,10 +227,14 @@ public class Policy
                            {
                               total_cost = base_fee + smoker_fee + BMI_fee; 
                            }
+                        else
+                           {
+                              total_cost = base_fee + smoker_fee;
+                           }
                      }
                   else
                      {
-                        if(calculateBMI() < 35)
+                        if(calculateBMI() > 35)
                            {
                               total_cost = base_fee + BMI_fee; 
                            }
