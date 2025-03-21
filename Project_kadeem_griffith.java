@@ -77,5 +77,5 @@ public class Project_kadeem_griffith
             
             System.out.printf("%n%nThe number of policies with a smoker is: %,d", total_smokers);  
             System.out.printf("%nThe number of policies with a non-smoker is: %,d",total_non_smokers);   
-         } 
+         }
    }
