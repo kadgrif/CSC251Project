@@ -49,8 +49,9 @@ public class Project_kadeem_griffith
                         height = keyboard.nextDouble();
 
                         weight = keyboard.nextDouble();
-
-                        Policy policy = new Policy(policy_number, provider_name, first_name, last_name, smoking_status, age, height, weight);
+                        
+                        PolicyHolder policyholder = new PolicyHolder(first_name, last_name, smoking_status, age, height, weight);
+                        Policy policy = new Policy(policy_number, provider_name, policyholder);
                         
                         policyList.add(policy);
                      }
@@ -68,14 +69,11 @@ public class Project_kadeem_griffith
             for (int i = 0; i < policyList.size(); i++)
                {
                    Policy temp = policyList.get(i);
-
-                   System.out.printf("%n%nPolicy Number: %s%nProvider Name: %s%nPolicyholder's First Name: %s", temp.getPolicyNumber(), temp.getProviderName(), temp.getFirstName());
-                   System.out.printf("%nPolicyholder's Last Name: %s%nPolicyholder's Age: %d%nPolicyholder's Smoking Status: %s", temp.getLastName(), temp.getAge(), temp.getSmokingStatus());
-                   System.out.printf("%nPolicyholder's Height: %,.2f inches%nPolicyholder's Weight: %,.2f pounds", temp.getHeight(), temp.getWeight());
-                   System.out.printf("%nPolicyholder's BMI: %,.2f%nPolicy Price: $%,.2f", temp.calculateBMI(), temp.calculatePrice());
+                   temp.ToString();
                }
-            
-            System.out.printf("%n%nThe number of policies with a smoker is: %,d", total_smokers);  
+               
+            System.out.printf("%n%nThere were %,d Policy objects created.%n", policyList.size());
+            System.out.printf("%nThe number of policies with a smoker is: %,d", total_smokers);  
             System.out.printf("%nThe number of policies with a non-smoker is: %,d",total_non_smokers);   
          }
    }
